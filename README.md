@@ -1,4 +1,4 @@
-# KoreanJosa.jl <font size=4>[[한글](REAEMD_KR.md)]</font>
+# KoreanJosa.jl <font size=4>[[한글](README_KR.md)]</font>
 ![LICENSE MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)
 
 Handling Korean [josa(postpositions)](https://en.wikipedia.org/wiki/Korean_postpositions) grammar

@@ -1,4 +1,4 @@
-# KoreanJosa.jl <font size=4>[[영문](REAEMD.md)]</font>
+# KoreanJosa.jl <font size=4>[[영문](README.md)]</font>
 ![LICENSE MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)
 
 한글 [조사](https://ko.wikipedia.org/wiki/토씨)처리 
