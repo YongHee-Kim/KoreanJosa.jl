@@ -11,31 +11,39 @@
 
 
 # Examples
+
 ```julia
-julia> ko"싸이(은) 가수다."
+julia> noun = "싸이" 
+julia> josa("$noun(은) 가수다.")
 "싸이는 가수다."
-julia> ko"방탄소년단(은) 가수다."	
+julia> noun = "방탄소년단" 
+julia> josa("$noun(은) 가수다.")	
 "방탄소년단은 가수다."
 ```
 
 ```julia
-julia>ko"하늘(이) 파랗다."	
+julia> noun = "하늘" 
+julia>josa("$noun(이) 파랗다.")	
 "하늘이 파랗다."
-julia>ko"바다(이) 파랗다."	
+julia> noun = "바다" 
+julia>josa("$noun(이) 파랗다.")	
 "바다가 파랗다."	
 ```
 
 ```julia
-julia>ko"라면(을) 먹었다."	
+julia> noun = "라면" 
+julia>josa("$noun(을) 먹었다.")	
 "라면을 먹었다."
-julia>ko"과자(을) 먹었다."
+julia> noun = "과자" 
+julia>josa("$noun(을) 먹었다.")
 "과자를 먹었다."
 ```	
 
 ```julia
-julia>ko"호주(로) 떠납니다."	
+julia> noun = "호주" 
+julia>josa("$noun(로) 떠납니다.")	
 "호주로 떠납니다."
-julia>ko"미국(로) 떠납니다."	
+julia> noun = "미국" 
+julia>josa("$noun(로) 떠납니다.")	
 "미국으로 떠납니다."
 ```
-
