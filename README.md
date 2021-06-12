@@ -1,5 +1,6 @@
 # KoreanJosa.jl <font size=4>[[한글](README_KR.md)]</font>
 ![LICENSE MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)
+[![Run CI on main](https://github.com/YongHee-Kim/KoreanJosa.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/YongHee-Kim/KoreanJosa.jl/actions/workflows/CI.yml)
 
 Handling Korean [josa(postpositions)](https://en.wikipedia.org/wiki/Korean_postpositions) grammar
 

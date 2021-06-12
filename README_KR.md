@@ -1,5 +1,6 @@
 # KoreanJosa.jl <font size=4>[[영문](README.md)]</font>
 ![LICENSE MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)
+[![Run CI on main](https://github.com/YongHee-Kim/KoreanJosa.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/YongHee-Kim/KoreanJosa.jl/actions/workflows/CI.yml)
 
 한글 [조사](https://ko.wikipedia.org/wiki/토씨)처리 패키지입니다
 
