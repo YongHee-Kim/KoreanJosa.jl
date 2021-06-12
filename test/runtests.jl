@@ -67,3 +67,8 @@ end
     s = "오늘(는) 맑고푸르른 하늘(와) 청명한 바다(을) 보며, 한국(로) 돌아가고 싶(는) 마음에 말(를) 꺼냈다. 혜미(아), 정철(야) 너희(은) 어떻게 생각하니? 글쎄... 선생님(라)면 오랜만(여)서 반가워 하실 것 같아."
     @test josa(s) == "오늘은 맑고푸르른 하늘과 청명한 바다를 보며, 한국으로 돌아가고 싶은 마음에 말을 꺼냈다. 혜미야, 정철아 너희는 어떻게 생각하니? 글쎄... 선생님이라면 오랜만이여서 반가워 하실 것 같아."
 end
+
+@testset "Exception" begin 
+    @test_throws ArgumentError KoreanJosa.JOSAMarker("(읍)")
+    @test_throws ArgumentError KoreanJosa.JOSA_이_가[3]
+end

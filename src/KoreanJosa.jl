@@ -49,28 +49,28 @@ end
 struct JOSA_이라_라 <: JOSAMarker
 end 
 function Base.getindex(::Type{JOSA_이_가}, i)
-    i == 1 ? "이" : i == 2 ? "가" : throw(KeyError(i))
+    i == 1 ? "이" : i == 2 ? "가" : throw(ArgumentError("Josa can have only 2 types"))
 end
 function Base.getindex(::Type{JOSA_과_와}, i)
-    i == 1 ? "과" : i == 2 ? "와" : throw(KeyError(i))
+    i == 1 ? "과" : i == 2 ? "와" : throw(ArgumentError("Josa can have only 2 types"))
 end
 function Base.getindex(::Type{JOSA_을_를}, i)
-    i == 1 ? "을" : i == 2 ? "를" : throw(KeyError(i))
+    i == 1 ? "을" : i == 2 ? "를" : throw(ArgumentError("Josa can have only 2 types"))
 end
 function Base.getindex(::Type{JOSA_은_는}, i)
-    i == 1 ? "은" : i == 2 ? "는" : throw(KeyError(i))
+    i == 1 ? "은" : i == 2 ? "는" : throw(ArgumentError("Josa can have only 2 types"))
 end
 function Base.getindex(::Type{JOSA_으로_로}, i)
-    i == 1 ? "으로" : i == 2 ? "로" : throw(KeyError(i))
+    i == 1 ? "으로" : i == 2 ? "로" : throw(ArgumentError("Josa can have only 2 types"))
 end
 function Base.getindex(::Type{JOSA_아_야}, i)
-    i == 1 ? "아" : i == 2 ? "야" : throw(KeyError(i))
+    i == 1 ? "아" : i == 2 ? "야" : throw(ArgumentError("Josa can have only 2 types"))
 end
 function Base.getindex(::Type{JOSA_이여_여}, i)
-    i == 1 ? "이여" : i == 2 ? "여" : throw(KeyError(i))
+    i == 1 ? "이여" : i == 2 ? "여" : throw(ArgumentError("Josa can have only 2 types"))
 end
 function Base.getindex(::Type{JOSA_이라_라}, i)
-    i == 1 ? "이라" : i == 2 ? "라" : throw(KeyError(i))
+    i == 1 ? "이라" : i == 2 ? "라" : throw(ArgumentError("Josa can have only 2 types"))
 end
 
 
