@@ -1,6 +1,6 @@
 module KoreanJosa
 
-export @ko_str
+export josa
 
 # https://github.com/myevan/pyjosa/blob/master/pyjosa.py
 # https://github.com/trilliwon/JNaturalKorean/blob/master/Sources/JNaturalKorean/JNaturalKorean.swift
@@ -73,9 +73,6 @@ function Base.getindex(::Type{JOSA_이라_라}, i)
     i == 1 ? "이라" : i == 2 ? "라" : throw(KeyError(i))
 end
 
-macro ko_str(s::AbstractString)
-    josa(s)
-end
 
 function josa(s::AbstractString)
     if !occursin(ALL_JOSA, s)
