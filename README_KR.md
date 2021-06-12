@@ -1,11 +1,12 @@
-# KoreanJosa.jl <font size=4>[[한글](REAEMD_KR.md)]</font>
+# KoreanJosa.jl <font size=4>[[영문](REAEMD.md)]</font>
 ![LICENSE MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)
 
-Handling Korean [josa(postpositions)](https://en.wikipedia.org/wiki/Korean_postpositions) grammar
+한글 [조사](https://ko.wikipedia.org/wiki/토씨)처리 
 
 # Usage 
-use any of `(이),(가),(과),(와),(을),(를),(은),(는),(으로),(로),(아),(야),(이여),(여),(이라),(라)` inside korean sentence. 
-And `KoreanJosa.jl` will choose appropriate korean josa. 
+
+문장에`(이),(가),(과),(와),(을),(를),(은),(는),(으로),(로),(아),(야),(이여),(여),(이라),(라)` 중 1개를 사용하면 앞단어에 맞춰 적절한 조사를 선택해 줍니다  
+
 
 # Examples
 ```julia
