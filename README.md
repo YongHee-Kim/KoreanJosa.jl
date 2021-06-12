@@ -3,6 +3,8 @@
 
 Handling Korean [josa(postpositions)](https://en.wikipedia.org/wiki/Korean_postpositions) grammar
 
+this package is inspired by [pyjosa](https://github.com/myevan/pyjosa)
+
 # Usage 
 use any of `(이),(가),(과),(와),(을),(를),(은),(는),(으로),(로),(아),(야),(이여),(여),(이라),(라)` inside korean sentence. 
 And `KoreanJosa.jl` will choose appropriate korean josa. 
