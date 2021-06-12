@@ -1,51 +1,69 @@
-self.assertEquals(replace_josa(
-    u"아노아(이)가 공격했다"), 
-    u"아노아가 공격했다")
+using Test
+using KoreanJosa
 
-self.assertEquals(replace_josa(
-    u"주펫(이)가 공격했다"), 
-    u"주펫이 공격했다")
 
-self.assertEquals(replace_josa(
-    u"아노아(은)는 자루(와)과 오리(을)를 칭송하고 절(으)로 들어갔습니다."), 
-    u"아노아는 자루와 오리를 칭송하고 절로 들어갔습니다.")
+@testset "Do nothing" begin 
+    @test josa("Korean josa system is hard to learn") == "Korean josa system is hard to learn"
+    @test josa("1986 + 2021") == "1986 + 2021"
+end
 
-self.assertEquals(replace_josa(
-    u"네(이)가 잘못했어. 확률(이)가 이상해. 덫(이)가 깔렸어."),
-    u"네가 잘못했어. 확률이 이상해. 덫이 깔렸어.")
+@testset "(이), (가)" begin 
+    @test josa("이것(이)") == josa("이것(가)") == "이것이"
+    @test josa("구글(이)") == josa("구글(가)") == "구글이"
+    @test josa("니(이)") == josa("니(가)") == "니가"
+    @test josa("누(이)") == josa("누(가)") == "누가"
+end
 
-self.assertEquals(replace_josa(
-    u"너(와)과 함께 할게. 글(와)과 그림. 빛(와)과 어둠."),
-    u"너와 함께 할게. 글과 그림. 빛과 어둠.")
+@testset "(과), (와)" begin 
+    @test josa("우리(과)") == josa("우리(와)") == "우리와"
+    @test josa("아이폰(과)") == josa("아이폰(와)") == "아이폰과"
+    @test josa("갤럭시(과)") == josa("갤럭시(와)") == "갤럭시와"
+    @test josa("학교(과)") == josa("학교(와)") == "학교와"
+end
 
-self.assertEquals(replace_josa(
-    u"수녀(을)를 존경했어. 남자들(을)를 입히다. 버튼(을)를 만지지 마."),
-    u"수녀를 존경했어. 남자들을 입히다. 버튼을 만지지 마.")
+@testset "(을), (를)" begin 
+    @test josa("이것(을)") == josa("이것(를)") == "이것을"
+    @test josa("장난(을)") == josa("장난(를)") == "장난을"
+    @test josa("고기(을)") == josa("고기(를)") == "고기를"
+    @test josa("장소(을)") == josa("장소(를)") == "장소를"
+end
 
-self.assertEquals(replace_josa(
-    u"우리(은)는 끝이야. 쌀(은)는 필요없어. 갑옷(은)는 찢었다."),
-    u"우리는 끝이야. 쌀은 필요없어. 갑옷은 찢었다.")
+@testset "(은), (는)" begin 
+    @test josa("왕(은)") == josa("왕(는)") == "왕은"
+    @test josa("목숨(은)") == josa("목숨(는)") == "목숨은"
+    @test josa("신하(은)") == josa("신하(는)") == "신하는"
+    @test josa("자네(은)") == josa("자네(는)") == "자네는"
+end
 
-self.assertEquals(replace_josa(
-    u"진우(아)야, 그것도 몰라? 경렬(아)야, 진정해. 상현(아)야, 뭐해?"),
-    u"진우야, 그것도 몰라? 경렬아, 진정해. 상현아, 뭐해?")
+@testset "(으로), (로)" begin 
+    @test josa("바다(으로)") == josa("바다(로)") == "바다로"
+    @test josa("서울(으로)") == josa("서울(로)") == "서울로"
+    @test josa("부산(으로)") == josa("부산(로)") == "부산으로"
+    @test josa("대학(으로)") == josa("대학(로)") == "대학으로"
+end
 
-self.assertEquals(replace_josa(
-    u"진우(이)여, 닥쳐라. 경렬(이)여, 이리 오라. 상현(이)여, 아무 일도 아니다."),
-    u"진우여, 닥쳐라. 경렬이여, 이리 오라. 상현이여, 아무 일도 아니다.")
+@testset "(아), (야)" begin 
+    @test josa("수진(아)") == josa("수진(야)") == "수진아"
+    @test josa("재석(아)") == josa("재석(야)") == "재석아"
+    @test josa("혜미(아)") == josa("혜미(야)") == "혜미야"
+    @test josa("용희(아)") == josa("용희(야)") == "용희야"
+end
 
-self.assertEquals(replace_josa(
-    u"부두(으)로 가야 해. 대궐(으)로 가거나. 집(으)로 갈래?"),
-    u"부두로 가야 해. 대궐로 가거나. 집으로 갈래?")
+@testset "(이여), (여)" begin 
+    @test josa("장사꾼(이여)") == josa("장사꾼(여)") == "장사꾼이여"
+    @test josa("학생(이여)") == josa("학생(여)") == "학생이여"
+    @test josa("그대(이여)") == josa("그대(여)") == "그대여"
+    @test josa("용사(이여)") == josa("용사(여)") == "용사여"
+end
 
-self.assertEquals(replace_josa(
-    u"나(이)라고 어쩔 수 있겠니? 별(이)라고 불러줘. 라면(이)라고 했잖아."),
-    u"나라고 어쩔 수 있겠니? 별이라고 불러줘. 라면이라고 했잖아.")
+@testset "(이라), (라)" begin 
+    @test josa("오늘(이라)") == josa("오늘(라)") == "오늘이라"
+    @test josa("고놈(이라)") == josa("고놈(라)") == "고놈이라"
+    @test josa("모레(이라)") == josa("모레(라)") == "모레라"
+    @test josa("제주도(이라)") == josa("제주도(라)") == "제주도라"
+end
 
-self.assertEquals(replace_josa(
-    u"라면(이)라면 어떨까? 밥(이)라능~"),
-    u"라면이라면 어떨까? 밥이라능~")
-
-self.assertEquals(replace_josa(
-    u"너(이)라면 어떨까? 나(이)라능~"),
-    u"너라면 어떨까? 나라능~")
+@testset "All" begin 
+    s = "오늘(는) 맑고푸르른 하늘(와) 청명한 바다(을) 보며, 한국(로) 돌아가고 싶(는) 마음에 말(를) 꺼냈다. 혜미(아), 정철(야) 너희(은) 어떻게 생각하니? 글쎄... 선생님(라)면 오랜만(여)서 반가워 하실 것 같아."
+    @test josa(s) == "오늘은 맑고푸르른 하늘과 청명한 바다를 보며, 한국으로 돌아가고 싶은 마음에 말을 꺼냈다. 혜미야, 정철아 너희는 어떻게 생각하니? 글쎄... 선생님이라면 오랜만이여서 반가워 하실 것 같아."
+end
