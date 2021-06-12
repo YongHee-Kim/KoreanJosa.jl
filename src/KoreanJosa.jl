@@ -1,5 +1,6 @@
 module KoreanJosa
 
+export josa
 
 # https://github.com/myevan/pyjosa/blob/master/pyjosa.py
 # https://github.com/trilliwon/JNaturalKorean/blob/master/Sources/JNaturalKorean/JNaturalKorean.swift
@@ -7,7 +8,7 @@ module KoreanJosa
 # unicode codepoints
 const BASECODE = 0xac00 # '가' 이후 한글 코드
 const JUNGSUNG = 28 
-const ALL_JOSA= r".?\([이|가|과|와|을|를|은|는|으로|로|아|야|이여|여|이라|라]\)"
+const ALL_JOSA= r".?\((이|가|과|와|을|를|은|는|으로|로|아|야|이여|여|이라|라)\)"
 
 abstract type JOSAMarker end 
 function JOSAMarker(marker)
@@ -33,7 +34,7 @@ function JOSAMarker(marker)
 end
 struct JOSA_이_가 <: JOSAMarker
 end 
-struct JOSA_와_과 <: JOSAMarker
+struct JOSA_과_와 <: JOSAMarker
 end 
 struct JOSA_을_를 <: JOSAMarker
 end 
@@ -50,8 +51,8 @@ end
 function Base.getindex(::Type{JOSA_이_가}, i)
     i == 1 ? "이" : i == 2 ? "가" : throw(KeyError(i))
 end
-function Base.getindex(::Type{JOSA_와_과}, i)
-    i == 1 ? "와" : i == 2 ? "과" : throw(KeyError(i))
+function Base.getindex(::Type{JOSA_과_와}, i)
+    i == 1 ? "과" : i == 2 ? "와" : throw(KeyError(i))
 end
 function Base.getindex(::Type{JOSA_을_를}, i)
     i == 1 ? "을" : i == 2 ? "를" : throw(KeyError(i))
